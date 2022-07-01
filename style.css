@@ -1,0 +1,61 @@
+:root{
+	--font: 'Zilla Slab', serif;
+	--lilas:#9A86A4;
+	--lilas-claro:#B1BCE6;
+	--verde-agua:#B7E5DD;
+	--areia:#F1F0C0;
+	--azul:#242F9B;
+	--font-size: 18px;
+}
+
+body{
+	font-family: var(--font);
+	font-size: var(--font-size);
+}
+
+header{
+
+	background: var(--azul);
+	
+}
+
+.caixa{
+	position: relative;
+	width: 900px;
+	margin: 0 auto;
+	top: -25px;
+}
+nav { 
+
+position: absolute;
+top:200px; 
+right: 0;
+
+ }
+
+nav li{
+
+display: inline;
+margin: 0 0 0 15px;
+
+}
+
+nav a{
+
+	text-transform: uppercase;
+	color: var(--verde-agua);
+	font-weight: bold;
+	font-size: 22px;
+	text-decoration: none;
+}
+
+nav a:hover{
+
+	color: var(--areia);
+	text-decoration: underline;
+}
+
+.banner{
+	width: 100%;
+
+}
