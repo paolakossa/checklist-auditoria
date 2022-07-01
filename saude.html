@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+	
+	<head>
+		
+		<meta charset = "UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<title>Checklist - PK Auditoria</title>
+		<link rel="stylesheet" href="reset.css">
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
+
+
+	</head>	
+
+	<body>
+		
+		<header>
+			<div class = "caixa">
+				<h1> <img src="2.png" class="logo"> </h1>
+
+				<nav>
+					<ul>
+						<li><a href = "index.html">Sobre Nós</a></li>
+						<li><a href = "checklist.html">Checklist</a></li>		
+	 
+					</ul>
+				</nav>
+			</div>
+		</header>
+					
+			<section class= "principal">
+				<h2 class="titulo-principal">CHECKLIST: SAÚDE, SANITIZAÇÃO, HIGIENE, VESTUÁRIO E CONDUTA</h2>
+				
+				<p>Atribua valores aos itens inspecionados de acordo com a lista abaixo:</p>
+
+				<ul>
+					<li class="lista">Atende: 2 pontos</li>
+					<li class="lista">Atende parcialmente: 1 ponto</li>
+					<li class="lista">Não atende: 0 ponto</li>
+
+				</ul>
+
+			
+
+			<form>
+					<label for="s1">A empresa deve assegurar que os funcionários utilizem paramentação limpa e adequada a cada área e atividade para garantir a proteção do produto contra contaminação.</label>
+					<input type="text" id="s1" class="input-padrao" required>
+
+					<label for="s2">Para que seja assegurada a proteção dos funcionários, o fabricante deve disponibilizar Equipamento de Proteção Coletiva (EPC) e Equipamento de Proteção Individual (EPI) de acordo com as atividades desenvolvidas conforme legislação específica vigente.</label>
+					<input type="text" id="s2" class="input-padrao" required>
+
+					<label for="s3">Deve-se proibir fumar, comer, beber, mascar ou manter plantas, alimentos, bebidas, fumo e medicamentos pessoais nas áreas de produção, do laboratório de controle de qualidade e de armazenamento ou em quaisquer outras áreas em que tais ações possam influir adversamente na qualidade do produto.</label>
+					<input type="text" id="s3" class="input-padrao" required>
+
+					<label for="s4">A localização dos bebedouros deve ser restrita a corredores ou locais específicos, de modo a evitar contaminação do produto e/ou risco a saúde do trabalhador.</label>
+					<input type="text" id="s4" class="input-padrao" required>
+
+					<label for="s5">Todo o pessoal deve ser treinado nas práticas de higiene pessoal. Todas as pessoas envolvidas nos processos de fabricação devem cumprir com as normas de higiene pessoal conforme procedimentos internos.</label>
+					<input type="text" id="s5" class="input-padrao" required>
+
+					<label>A pontuação da sua auditoria é:</label>
+					<input type="text" id="pontuacao" value="" readonly>
+					
+			</form>
+
+					<button onclick="Pontuacao()">Calcular</button>
+
+
+
+		</section>
+
+	</body>
+</html>
+
+<script>
+	
+	function Pontuacao(){
+        var s1 = parseInt((document.getElementById("s1").value));
+        var s2 = parseInt((document.getElementById("s2").value));
+        var s3 = parseInt((document.getElementById("s3").value));
+        var s4 = parseInt((document.getElementById("s4").value));
+        var s5 = parseInt((document.getElementById("s5").value));
+        var pontuacao= (s1) + (s2) + (s3) + (s4) + (s5);
+
+          document.getElementById("pontuacao").setAttribute("value", pontuacao);
+
+
+    }
+
+	
+
+
+	
+</script>
+
+
+
+
+
