@@ -22,8 +22,8 @@
 
 				<nav>
 					<ul>
-						<li><a href = "index.html">Sobre Nós</a></li>
-						<li><a href = "checklist.html">Checklist</a></li>		
+						<li><a href = "index.html">🔍Sobre Nós</a></li>
+						<li><a href = "checklist.html">🔍Checklist</a></li>		
 	 
 					</ul>
 				</nav>
@@ -60,12 +60,17 @@
 					<label for="s5">Todo o pessoal deve ser treinado nas práticas de higiene pessoal. Todas as pessoas envolvidas nos processos de fabricação devem cumprir com as normas de higiene pessoal conforme procedimentos internos.</label>
 					<input type="text" id="s5" class="input-padrao" required>
 
-					<label>A pontuação da sua auditoria é:</label>
-					<input type="text" id="pontuacao" value="" readonly>
 					
 			</form>
 
-					<button onclick="Pontuacao()">Calcular</button>
+					<label>A pontuação da sua auditoria é:</label>
+					<input type="text" id="pontuacao" value="" readonly>
+					<button onclick="Pontuacao()">Calcular</button><br><br>
+
+					<label>O resultado da sua auditoria é:</label>
+					<input type="text" id="resultado" value="" readonly>
+					<button onclick="Resultado()">Resultado</button>
+
 
 
 
@@ -90,6 +95,38 @@
     }
 
 	
+
+
+		function Resultado(){
+        var pontuacao = parseInt((document.getElementById("pontuacao").value));
+        var sat = "Satisfatório"
+        var exi = "Em exigência"
+        var ins = "Insatisfatório"
+
+        if (10>=pontuacao&&pontuacao>=7) {
+		
+		document.getElementById("resultado").setAttribute("value", sat);
+		document.getElementById("resultado").style.backgroundColor = "#5FD068";
+
+
+        }
+       
+        if (6>=pontuacao&&pontuacao>=4) {
+
+        	document.getElementById("resultado").setAttribute("value", exi);
+        	document.getElementById("resultado").style.backgroundColor = "#FAEA48";
+
+
+        }
+
+         if (3>=pontuacao&&pontuacao>=0) {
+
+         	document.getElementById("resultado").setAttribute("value", ins);
+         	document.getElementById("resultado").style.backgroundColor = "#EB4747";
+
+         } 
+
+	}
 
 
 	
