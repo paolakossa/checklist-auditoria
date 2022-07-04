@@ -31,7 +31,7 @@
 		</header>
 					
 			<section class= "principal">
-				<h2 class="titulo-principal">CHECKLIST: SAÚDE, SANITIZAÇÃO, HIGIENE, VESTUÁRIO E CONDUTA</h2>
+				<h2 class="titulo-principal">CHECKLIST: ENVASE, EMBALAGEM E ROTULAGEM</h2>
 				
 				<p>Atribua valores aos itens inspecionados de acordo com a lista abaixo:</p>
 
@@ -45,22 +45,23 @@
 			
 
 			<form>
-					<label for="s1">A empresa deve assegurar que os funcionários utilizem paramentação limpa e adequada a cada área e atividade para garantir a proteção do produto contra contaminação.</label>
+					<label for="s1">Deve existir área apropriada ou local específico para o envase/embalagem de produtos. A distribuição dos equipamentos deve ser ordenada e racional.</label>
 					<input type="text" id="s1" class="input-padrao" required>
 
-					<label for="s2">Para que seja assegurada a proteção dos funcionários, o fabricante deve disponibilizar Equipamento de Proteção Coletiva (EPC) e Equipamento de Proteção Individual (EPI) de acordo com as atividades desenvolvidas conforme legislação específica vigente.</label>
+					<label for="s2">As instalações físicas para o envase/embalagem dos produtos devem ser projetadas de forma a evitar misturas entre diferentes produtos e lotes.</label>
 					<input type="text" id="s2" class="input-padrao" required>
 
-					<label for="s3">Deve-se proibir fumar, comer, beber, mascar ou manter plantas, alimentos, bebidas, fumo e medicamentos pessoais nas áreas de produção, do laboratório de controle de qualidade e de armazenamento ou em quaisquer outras áreas em que tais ações possam influir adversamente na qualidade do produto.</label>
+					<label for="s3">O produto a granel deve ser mantido fechado durante o processo de envase, sendo aberto somente quando necessário. Deve existir identificação do produto (nome e/ou codificação e lote) de forma visível nos equipamentos e em cada linha de envase.</label>
 					<input type="text" id="s3" class="input-padrao" required>
 
-					<label for="s4">A localização dos bebedouros deve ser restrita a corredores ou locais específicos, de modo a evitar contaminação do produto e/ou risco a saúde do trabalhador.</label>
+					<label for="s4">O produto a granel deve ser mantido fechado durante o processo de envase, sendo aberto somente quando necessário. Deve existir identificação do produto (nome e/ou codificação e lote) de forma visível nos equipamentos e em cada linha de envase.</label>
 					<input type="text" id="s4" class="input-padrao" required>
 
-					<label for="s5">Todo o pessoal deve ser treinado nas práticas de higiene pessoal. Todas as pessoas envolvidas nos processos de fabricação devem cumprir com as normas de higiene pessoal conforme procedimentos internos.</label>
+					<label for="s5">O material codificado remanescente do envase/embalagem deve ser destruído, com registros.</label>
 					<input type="text" id="s5" class="input-padrao" required>
 
-					
+					<label for="s6">Nos casos em que o envase e a rotulagem não sejam contínuos, devem ser adotadas medidas de identificação e segregação para evitar misturas ou erros de rotulagem.</label>
+					<input type="text" id="s6" class="input-padrao" required>
 			</form>
 
 					<label>A pontuação da sua auditoria é:</label>
@@ -87,7 +88,9 @@
         var s3 = parseInt((document.getElementById("s3").value));
         var s4 = parseInt((document.getElementById("s4").value));
         var s5 = parseInt((document.getElementById("s5").value));
-        var pontuacao= (s1) + (s2) + (s3) + (s4) + (s5);
+        var s6 = parseInt((document.getElementById("s6").value));
+
+        var pontuacao= (s1) + (s2) + (s3) + (s4) + (s5) + (s6);
 
           document.getElementById("pontuacao").setAttribute("value", pontuacao);
 
@@ -103,7 +106,7 @@
         var exi = "Em exigência"
         var ins = "Insatisfatório"
 
-        if (10>=pontuacao&&pontuacao>=7) {
+        if (12>=pontuacao&&pontuacao>=8) {
 		
 		document.getElementById("resultado").setAttribute("value", sat);
 		document.getElementById("resultado").style.backgroundColor = "#5FD068";
@@ -111,7 +114,7 @@
 
         }
        
-        if (6>=pontuacao&&pontuacao>=4) {
+        if (7>=pontuacao&&pontuacao>=4) {
 
         	document.getElementById("resultado").setAttribute("value", exi);
         	document.getElementById("resultado").style.backgroundColor = "#FAEA48";
@@ -131,8 +134,4 @@
 
 	
 </script>
-
-
-
-
 
