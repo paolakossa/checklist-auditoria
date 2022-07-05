@@ -6,7 +6,7 @@
 		
 		<meta charset = "UTF-8">
 		<meta name="viewport" content="width=device-width initial-scale=1.0">
-		<title>Checklist - PK Auditoria</title>
+		<title>Manipulação</title>
 		<link rel="stylesheet" href="reset.css">
 		<link rel="stylesheet" href="style.css">
 		<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
 		</header>
 					
 			<section class= "principal">
-				<h2 class="titulo-principal">CHECKLIST: MANIPULAÇÃO</h2>
+				<h2 class="titulo-principal">MANIPULAÇÃO</h2>
 				
 				<p>Atribua valores aos itens inspecionados de acordo com a lista abaixo:</p>
 
@@ -58,6 +58,11 @@
 					<label for="s3">Quando o processo não é contínuo, deve haver uma área definida para armazenamento de produtos semi-elaborados ou a granel.</label>
 					<input type="text" id="s3" class="input-padrao" required>
 
+					<label for="s4">Antes de iniciar um processo de produção, deve ser verificado se os equipamentos e o local de trabalho estão livres de produtos anteriormente produzidos, assim como os documentos e materiais necessários para o processo planejado. Além disso, deve ser verificado se os equipamentos estão limpos e adequados para uso. As verificações desses itens devem ser registradas..</label>
+					<input type="text" id="s4" class="input-padrao" required>
+
+					
+
 					
 			</form>
 
@@ -74,6 +79,12 @@
 
 		</section>
 
+		<footer class="rodape">
+			
+			<img src="2.png" class="logo1">
+			<p class="copyright">&copy; Copyright PK Auditoria - 2022</p>
+		</footer>	
+
 	</body>
 </html>
 
@@ -83,8 +94,9 @@
         var s1 = parseInt((document.getElementById("s1").value));
         var s2 = parseInt((document.getElementById("s2").value));
         var s3 = parseInt((document.getElementById("s3").value));
+        var s4 = parseInt((document.getElementById("s4").value));
         
-        var pontuacao= (s1) + (s2) + (s3);
+        var pontuacao= (s1) + (s2) + (s3) + (s4);
 
           document.getElementById("pontuacao").setAttribute("value", pontuacao);
 
@@ -100,7 +112,7 @@
         var exi = "Em exigência"
         var ins = "Insatisfatório"
 
-        if (6>=pontuacao&&pontuacao>=5) {
+        if (8>=pontuacao&&pontuacao>=6) {
 		
 		document.getElementById("resultado").setAttribute("value", sat);
 		document.getElementById("resultado").style.backgroundColor = "#5FD068";
@@ -108,7 +120,7 @@
 
         }
        
-        if (4>=pontuacao&&pontuacao>=3) {
+        if (5>=pontuacao&&pontuacao>=3) {
 
         	document.getElementById("resultado").setAttribute("value", exi);
         	document.getElementById("resultado").style.backgroundColor = "#FAEA48";

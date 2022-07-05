@@ -6,7 +6,7 @@
 		
 		<meta charset = "UTF-8">
 		<meta name="viewport" content="width=device-width initial-scale=1.0">
-		<title>Envase</title>
+		<title>Validação</title>
 		<link rel="stylesheet" href="reset.css">
 		<link rel="stylesheet" href="style.css">
 		<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
 		</header>
 					
 			<section class= "principal">
-				<h2 class="titulo-principal">ENVASE, EMBALAGEM E ROTULAGEM</h2>
+				<h2 class="titulo-principal">VALIDAÇÃO</h2>
 				
 				<p>Atribua valores aos itens inspecionados de acordo com a lista abaixo:</p>
 
@@ -45,23 +45,33 @@
 			
 
 			<form>
-					<label for="s1">Deve existir área apropriada ou local específico para o envase/embalagem de produtos. A distribuição dos equipamentos deve ser ordenada e racional.</label>
+					<label for="s1">A empresa deve conhecer seus processos a fim de estabelecer critérios para identificar a necessidade de validação ou não dos mesmos. Quando as validações forem aplicáveis, deve ser estabelecido um protocolo de validação que especifique como o processo será conduzido. O protocolo deve ser aprovado pela Garantia da Qualidade.</label>
 					<input type="text" id="s1" class="input-padrao" required>
 
-					<label for="s2">As instalações físicas para o envase/embalagem dos produtos devem ser projetadas de forma a evitar misturas entre diferentes produtos e lotes.</label>
+					<label for="s2">Para os produtos/processos que não serão validados, a empresa deve estabelecer todos os controles operacionais necessários para garantir o cumprimento dos requisitos preestabelecidos ou especificados.</label>
 					<input type="text" id="s2" class="input-padrao" required>
 
-					<label for="s3">O produto a granel deve ser mantido fechado durante o processo de envase, sendo aberto somente quando necessário. Deve existir identificação do produto (nome e/ou codificação e lote) de forma visível nos equipamentos e em cada linha de envase.</label>
+					<label for="s3">O protocolo de validação deve especificar, no mínimo:
+									a) Descrição dos equipamentos e instalações; 
+									b) Variáveis a serem monitoradas; 
+									c) Amostras que devem ser coletadas (localização, frequência, quantidade e método de amostragem); 
+									d) Características de desempenho a serem monitoradas, especificando os métodos analíticos e limites de aceitação.</label>
 					<input type="text" id="s3" class="input-padrao" required>
 
-					<label for="s4">É recomendável a verificação da relação entre o rendimento teórico e o real e se houver discrepância com os parâmetros estabelecidos, justificar por escrito.</label>
+					<label for="s4">É recomendável a validação de limpeza, metodologia analítica (quando se tratar de metodologias não codificadas em normas ou outra bibliografia reconhecida), sistemas informatizados, sistema de água de processos.</label>
 					<input type="text" id="s4" class="input-padrao" required>
 
-					<label for="s5">O material codificado remanescente do envase/embalagem deve ser destruído, com registros.</label>
+					<label for="s5">O relatório de validação deve fazer referência ao protocolo e ser elaborado contemplando resultados obtidos, desvios, conclusões, recomendações e mudanças.</label>
 					<input type="text" id="s5" class="input-padrao" required>
 
-					<label for="s6">Nos casos em que o envase e a rotulagem não sejam contínuos, devem ser adotadas medidas de identificação e segregação para evitar misturas ou erros de rotulagem.</label>
+					<label for="s6">Qualquer desvio do protocolo de validação deve ser documentado, investigado e justificado.</label>
 					<input type="text" id="s6" class="input-padrao" required>
+
+					<label for="s7">O processo de validação é satisfatório quando os resultados são aceitáveis. Caso contrário, deve-se analisar a origem dos desvios encontrados e determinar as alterações necessárias, até que o mesmo apresente resultados aceitáveis.</label>
+					<input type="text" id="s7" class="input-padrao" required>
+
+					<label for="s8">Devem ser estabelecidos os critérios de qualificação de acordo com a complexidade dos equipamentos, processos e sistemas críticos. A qualificação é pré-requisito para validação.</label>
+					<input type="text" id="s8" class="input-padrao" required>
 			</form>
 
 					<label>A pontuação da sua auditoria é:</label>
@@ -95,8 +105,10 @@
         var s4 = parseInt((document.getElementById("s4").value));
         var s5 = parseInt((document.getElementById("s5").value));
         var s6 = parseInt((document.getElementById("s6").value));
+        var s7 = parseInt((document.getElementById("s7").value));
+        var s8 = parseInt((document.getElementById("s8").value));
 
-        var pontuacao= (s1) + (s2) + (s3) + (s4) + (s5) + (s6);
+        var pontuacao= (s1) + (s2) + (s3) + (s4) + (s5) + (s6) + (s7) + (s8);
 
           document.getElementById("pontuacao").setAttribute("value", pontuacao);
 
@@ -112,7 +124,7 @@
         var exi = "Em exigência"
         var ins = "Insatisfatório"
 
-        if (12>=pontuacao&&pontuacao>=8) {
+        if (16>=pontuacao&&pontuacao>=12) {
 		
 		document.getElementById("resultado").setAttribute("value", sat);
 		document.getElementById("resultado").style.backgroundColor = "#5FD068";
@@ -120,7 +132,7 @@
 
         }
        
-        if (7>=pontuacao&&pontuacao>=4) {
+        if (11>=pontuacao&&pontuacao>=7) {
 
         	document.getElementById("resultado").setAttribute("value", exi);
         	document.getElementById("resultado").style.backgroundColor = "#FAEA48";
@@ -128,7 +140,7 @@
 
         }
 
-         if (3>=pontuacao&&pontuacao>=0) {
+         if (6>=pontuacao&&pontuacao>=0) {
 
          	document.getElementById("resultado").setAttribute("value", ins);
          	document.getElementById("resultado").style.backgroundColor = "#EB4747";

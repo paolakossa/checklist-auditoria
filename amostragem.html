@@ -6,7 +6,7 @@
 		
 		<meta charset = "UTF-8">
 		<meta name="viewport" content="width=device-width initial-scale=1.0">
-		<title>Checklist - PK Auditoria</title>
+		<title>Amostragem</title>
 		<link rel="stylesheet" href="reset.css">
 		<link rel="stylesheet" href="style.css">
 		<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
 		</header>
 					
 			<section class= "principal">
-				<h2 class="titulo-principal">CHECKLIST: AMOSTRAGEM</h2>
+				<h2 class="titulo-principal">AMOSTRAGEM</h2>
 				
 				<p>Atribua valores aos itens inspecionados de acordo com a lista abaixo:</p>
 
@@ -66,6 +66,30 @@
 
 					<label for="s6">Para que seja assegurada a proteção dos funcionários, o fabricante deve disponibilizar Equipamento de Proteção Individual (EPI) de acordo com as atividades desenvolvidas conforme legislação específica vigente (Área de paramentação).</label>
 					<input type="text" id="s6" class="input-padrao" required>
+
+					<label for="s7">As amostras devem ser representativas do lote do material recebido, no caso de recebimento de mais de um lote do mesmo material, os mesmos devem ser amostrados separadamente.</label>
+					<input type="text" id="s7" class="input-padrao" required>
+
+					<label for="s8">O número dos recipientes amostrados e o tamanho de amostra devem ser baseados em um plano de amostragem.</label>
+					<input type="text" id="s8" class="input-padrao" required>
+
+					<label for="s9">A amostragem deve ser conduzida obedecendo os procedimentos aprovados de forma a garantir a proteção das amostras de contaminações.</label>
+					<input type="text" id="s9" class="input-padrao" required>
+
+					<label for="s10">Os procedimentos Operacionais Padrões relativos à amostragem devem incluir, no mínimo:
+									a)	Identificação da função/cargo designado a coleta a amostra;
+									b)	Método ou critério de amostragem: número de recipientes, parte no recipiente a ser amostrado, quantidade de material, instrumentos utilizados para amostragem;
+									c)	Equipamento a ser usado para amostragem e o EPI, quando necessário;
+									d)	O tipo de embalagem para a amostra, condições de amostragem (se asséptico ou não) e rótulo;
+									e)	Qualquer precaução especial a ser observada;
+									f)	Instruções para limpeza e armazenamento dos equipamentos de amostragem;
+									g)	Condição de armazenamento das amostras;
+									h)	Período de retenção das amostras;
+									i)	Identificação da amostra. </label>
+					<input type="text" id="s10" class="input-padrao" required>
+			
+
+
 			</form>
 
 					<label>A pontuação da sua auditoria é:</label>
@@ -81,6 +105,12 @@
 
 		</section>
 
+		<footer class="rodape">
+			
+			<img src="2.png" class="logo1">
+			<p class="copyright">&copy; Copyright PK Auditoria - 2022</p>
+		</footer>	
+
 	</body>
 </html>
 
@@ -93,8 +123,12 @@
         var s4 = parseInt((document.getElementById("s4").value));
         var s5 = parseInt((document.getElementById("s5").value));
         var s6 = parseInt((document.getElementById("s6").value));
+        var s7 = parseInt((document.getElementById("s7").value));
+        var s8 = parseInt((document.getElementById("s8").value));
+        var s9 = parseInt((document.getElementById("s9").value));
+        var s10 = parseInt((document.getElementById("s10").value));
 
-        var pontuacao= (s1) + (s2) + (s3) + (s4) + (s5) + (s6);
+        var pontuacao= (s1) + (s2) + (s3) + (s4) + (s5) + (s6) +(s7) + (s8) + (s9) + (s10);
 
           document.getElementById("pontuacao").setAttribute("value", pontuacao);
 
@@ -110,7 +144,7 @@
         var exi = "Em exigência"
         var ins = "Insatisfatório"
 
-        if (12>=pontuacao&&pontuacao>=8) {
+        if (20>=pontuacao&&pontuacao>=16) {
 		
 		document.getElementById("resultado").setAttribute("value", sat);
 		document.getElementById("resultado").style.backgroundColor = "#5FD068";
@@ -118,7 +152,7 @@
 
         }
        
-        if (7>=pontuacao&&pontuacao>=4) {
+        if (15>=pontuacao&&pontuacao>=11) {
 
         	document.getElementById("resultado").setAttribute("value", exi);
         	document.getElementById("resultado").style.backgroundColor = "#FAEA48";
@@ -126,7 +160,7 @@
 
         }
 
-         if (3>=pontuacao&&pontuacao>=0) {
+         if (10>=pontuacao&&pontuacao>=0) {
 
          	document.getElementById("resultado").setAttribute("value", ins);
          	document.getElementById("resultado").style.backgroundColor = "#EB4747";

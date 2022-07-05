@@ -6,7 +6,7 @@
 		
 		<meta charset = "UTF-8">
 		<meta name="viewport" content="width=device-width initial-scale=1.0">
-		<title>Envase</title>
+		<title>Documentos e Licenças</title>
 		<link rel="stylesheet" href="reset.css">
 		<link rel="stylesheet" href="style.css">
 		<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
 		</header>
 					
 			<section class= "principal">
-				<h2 class="titulo-principal">ENVASE, EMBALAGEM E ROTULAGEM</h2>
+				<h2 class="titulo-principal">DOCUMENTOS E LICENÇAS</h2>
 				
 				<p>Atribua valores aos itens inspecionados de acordo com a lista abaixo:</p>
 
@@ -45,23 +45,56 @@
 			
 
 			<form>
-					<label for="s1">Deve existir área apropriada ou local específico para o envase/embalagem de produtos. A distribuição dos equipamentos deve ser ordenada e racional.</label>
+					<label for="s1">Projeto Arquitetônico aprovado.</label>
 					<input type="text" id="s1" class="input-padrao" required>
 
-					<label for="s2">As instalações físicas para o envase/embalagem dos produtos devem ser projetadas de forma a evitar misturas entre diferentes produtos e lotes.</label>
+					<label for="s2">Licença Ambiental</label>
 					<input type="text" id="s2" class="input-padrao" required>
 
-					<label for="s3">O produto a granel deve ser mantido fechado durante o processo de envase, sendo aberto somente quando necessário. Deve existir identificação do produto (nome e/ou codificação e lote) de forma visível nos equipamentos e em cada linha de envase.</label>
+					<label for="s3">Cercom</label>
 					<input type="text" id="s3" class="input-padrao" required>
 
-					<label for="s4">É recomendável a verificação da relação entre o rendimento teórico e o real e se houver discrepância com os parâmetros estabelecidos, justificar por escrito.</label>
+					<label for="s4">Comprovação do registro de responsabilidade técnica</label>
 					<input type="text" id="s4" class="input-padrao" required>
 
-					<label for="s5">O material codificado remanescente do envase/embalagem deve ser destruído, com registros.</label>
+					<label for="s5">PRGS</label>
 					<input type="text" id="s5" class="input-padrao" required>
 
-					<label for="s6">Nos casos em que o envase e a rotulagem não sejam contínuos, devem ser adotadas medidas de identificação e segregação para evitar misturas ou erros de rotulagem.</label>
+					<label for="s6">Controle entre terceiros</label>
 					<input type="text" id="s6" class="input-padrao" required>
+
+					<label for="s7">Qualificação de Fornecedores</label>
+					<input type="text" id="s7" class="input-padrao" required>
+
+					<label for="s8">Contrato Social com a última alteração</label>
+					<input type="text" id="s8" class="input-padrao" required>
+
+					<label for="s9">Autorização ou alvará referente à localização e ocupação (Uso do solo)</label>
+					<input type="text" id="s9" class="input-padrao" required>
+
+					<label for="s10">PPRA</label>
+					<input type="text" id="s10" class="input-padrao" required>
+
+					<label for="s11">PCMSO</label>
+					<input type="text" id="s11" class="input-padrao" required>
+
+					<label for="s12">AFE</label>
+					<input type="text" id="s12" class="input-padrao" required>
+
+					<label for="s13">Certificado de vistoria de veículos</label>
+					<input type="text" id="s13" class="input-padrao" required>
+
+					<label for="s14">Cadastro Nacional da Pessoal Jurídica (CNPJ)</label>
+					<input type="text" id="s14" class="input-padrao" required>
+
+					<label for="s15">Certificado de Licença de Funcionamento – Polícia Federal</label>
+					<input type="text" id="s15" class="input-padrao" required>
+
+					<label for="s16">Licença IBAMA</label>
+					<input type="text" id="s16" class="input-padrao" required>
+
+					
+					
 			</form>
 
 					<label>A pontuação da sua auditoria é:</label>
@@ -77,12 +110,11 @@
 
 		</section>
 
-		<footer class="rodape">
+			<footer class="rodape">
 			
 			<img src="2.png" class="logo1">
 			<p class="copyright">&copy; Copyright PK Auditoria - 2022</p>
-		</footer>	
-
+			</footer>	
 	</body>
 </html>
 
@@ -95,8 +127,18 @@
         var s4 = parseInt((document.getElementById("s4").value));
         var s5 = parseInt((document.getElementById("s5").value));
         var s6 = parseInt((document.getElementById("s6").value));
+        var s7 = parseInt((document.getElementById("s7").value));
+        var s8 = parseInt((document.getElementById("s8").value));
+        var s9 = parseInt((document.getElementById("s9").value));
+        var s10 = parseInt((document.getElementById("s10").value));
+        var s11 = parseInt((document.getElementById("s11").value));
+        var s12 = parseInt((document.getElementById("s12").value));
+        var s13 = parseInt((document.getElementById("s13").value));
+        var s14 = parseInt((document.getElementById("s14").value));
+        var s15 = parseInt((document.getElementById("s15").value));
+        var s16 = parseInt((document.getElementById("s16").value));
 
-        var pontuacao= (s1) + (s2) + (s3) + (s4) + (s5) + (s6);
+        var pontuacao= (s1) + (s2) + (s3) + (s4) + (s5) + (s6) + (s7) + (s8) + (s9) + (s10) + (s11) + (s12) + (s13) + (s14) + (s15) + (s16);
 
           document.getElementById("pontuacao").setAttribute("value", pontuacao);
 
@@ -112,7 +154,7 @@
         var exi = "Em exigência"
         var ins = "Insatisfatório"
 
-        if (12>=pontuacao&&pontuacao>=8) {
+        if (32>=pontuacao&&pontuacao>=28) {
 		
 		document.getElementById("resultado").setAttribute("value", sat);
 		document.getElementById("resultado").style.backgroundColor = "#5FD068";
@@ -120,7 +162,7 @@
 
         }
        
-        if (7>=pontuacao&&pontuacao>=4) {
+        if (27>=pontuacao&&pontuacao>=23) {
 
         	document.getElementById("resultado").setAttribute("value", exi);
         	document.getElementById("resultado").style.backgroundColor = "#FAEA48";
@@ -128,7 +170,7 @@
 
         }
 
-         if (3>=pontuacao&&pontuacao>=0) {
+         if (pontuacao<23) {
 
          	document.getElementById("resultado").setAttribute("value", ins);
          	document.getElementById("resultado").style.backgroundColor = "#EB4747";

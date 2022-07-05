@@ -6,7 +6,7 @@
 		
 		<meta charset = "UTF-8">
 		<meta name="viewport" content="width=device-width initial-scale=1.0">
-		<title>Envase</title>
+		<title>Pesagem</title>
 		<link rel="stylesheet" href="reset.css">
 		<link rel="stylesheet" href="style.css">
 		<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
 		</header>
 					
 			<section class= "principal">
-				<h2 class="titulo-principal">ENVASE, EMBALAGEM E ROTULAGEM</h2>
+				<h2 class="titulo-principal">PESAGEM</h2>
 				
 				<p>Atribua valores aos itens inspecionados de acordo com a lista abaixo:</p>
 
@@ -45,23 +45,31 @@
 			
 
 			<form>
-					<label for="s1">Deve existir área apropriada ou local específico para o envase/embalagem de produtos. A distribuição dos equipamentos deve ser ordenada e racional.</label>
+					<label for="s1">As empresas devem possuir área dedicada para as atividades de pesagem e medidas de matérias-primas destinadas à produção de produtos que trata este regulamento.</label>
 					<input type="text" id="s1" class="input-padrao" required>
 
-					<label for="s2">As instalações físicas para o envase/embalagem dos produtos devem ser projetadas de forma a evitar misturas entre diferentes produtos e lotes.</label>
+					<label for="s2">A deve possuir área separada fisicamente das demais dependências, quando o processo assim o exigir.</label>
 					<input type="text" id="s2" class="input-padrao" required>
 
-					<label for="s3">O produto a granel deve ser mantido fechado durante o processo de envase, sendo aberto somente quando necessário. Deve existir identificação do produto (nome e/ou codificação e lote) de forma visível nos equipamentos e em cada linha de envase.</label>
+					<label for="s3">As áreas destinadas a medidas, quando aplicável, e à pesagem das matérias-primas podem estar localizadas no almoxarifado ou na área de produção, devendo as mesmas ser projetadas e separadas para esse fim, possuindo sistema de exaustão adequado, que evite a ocorrência de contaminação cruzada e ambiental.</label>
 					<input type="text" id="s3" class="input-padrao" required>
 
-					<label for="s4">É recomendável a verificação da relação entre o rendimento teórico e o real e se houver discrepância com os parâmetros estabelecidos, justificar por escrito.</label>
+					<label for="s4">Os recipientes ou embalagens externas das matérias-primas a serem pesadas e/ou medidas devem ser limpos antes de entrarem nas áreas de pesagem.</label>
 					<input type="text" id="s4" class="input-padrao" required>
 
-					<label for="s5">O material codificado remanescente do envase/embalagem deve ser destruído, com registros.</label>
+					<label for="s5">Os materiais pesados e/o medidos devem ser imediatamente identificados por meio de etiquetas ou sistemas de identificação contendo o nome, código interno e lote da matéria-prima e a quantidade pesada ou medida, a fim de evitar misturas.</label>
 					<input type="text" id="s5" class="input-padrao" required>
 
-					<label for="s6">Nos casos em que o envase e a rotulagem não sejam contínuos, devem ser adotadas medidas de identificação e segregação para evitar misturas ou erros de rotulagem.</label>
+					<label for="s6">Os materiais medidos ou pesados devem ser segregados fisicamente por lote ou ordem de fabricação.</label>
 					<input type="text" id="s6" class="input-padrao" required>
+
+					<label for="s7">Os utensílios de pesagens e medidas devem estar limpos, identificados quanto ao seu status de limpeza, e guardados em local que assegure sua integridade.</label>
+					<input type="text" id="s7" class="input-padrao" required>
+
+					<label for="s8">O recipiente de matéria-prima que tenha sido pesada e que por não utilizada retornará ao depósito, deve ser fechado e identificado adequadamente.</label>
+					<input type="text" id="s8" class="input-padrao" required>
+
+					
 			</form>
 
 					<label>A pontuação da sua auditoria é:</label>
@@ -95,8 +103,11 @@
         var s4 = parseInt((document.getElementById("s4").value));
         var s5 = parseInt((document.getElementById("s5").value));
         var s6 = parseInt((document.getElementById("s6").value));
+        var s7 = parseInt((document.getElementById("s7").value));
+        var s8 = parseInt((document.getElementById("s8").value));
+       
 
-        var pontuacao= (s1) + (s2) + (s3) + (s4) + (s5) + (s6);
+        var pontuacao= (s1) + (s2) + (s3) + (s4) + (s5) + (s6) + (s7) + (s8);
 
           document.getElementById("pontuacao").setAttribute("value", pontuacao);
 
@@ -104,15 +115,13 @@
     }
 
 	
-
-
 		function Resultado(){
         var pontuacao = parseInt((document.getElementById("pontuacao").value));
         var sat = "Satisfatório"
         var exi = "Em exigência"
         var ins = "Insatisfatório"
 
-        if (12>=pontuacao&&pontuacao>=8) {
+        if (16>=pontuacao&&pontuacao>=12) {
 		
 		document.getElementById("resultado").setAttribute("value", sat);
 		document.getElementById("resultado").style.backgroundColor = "#5FD068";
@@ -120,7 +129,7 @@
 
         }
        
-        if (7>=pontuacao&&pontuacao>=4) {
+        if (11>=pontuacao&&pontuacao>=6) {
 
         	document.getElementById("resultado").setAttribute("value", exi);
         	document.getElementById("resultado").style.backgroundColor = "#FAEA48";
@@ -128,7 +137,7 @@
 
         }
 
-         if (3>=pontuacao&&pontuacao>=0) {
+         if (pontuacao<6) {
 
          	document.getElementById("resultado").setAttribute("value", ins);
          	document.getElementById("resultado").style.backgroundColor = "#EB4747";

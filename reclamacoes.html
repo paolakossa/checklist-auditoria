@@ -6,7 +6,7 @@
 		
 		<meta charset = "UTF-8">
 		<meta name="viewport" content="width=device-width initial-scale=1.0">
-		<title>Envase</title>
+		<title>Reclamações</title>
 		<link rel="stylesheet" href="reset.css">
 		<link rel="stylesheet" href="style.css">
 		<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
 		</header>
 					
 			<section class= "principal">
-				<h2 class="titulo-principal">ENVASE, EMBALAGEM E ROTULAGEM</h2>
+				<h2 class="titulo-principal">RECLAMAÇÕES</h2>
 				
 				<p>Atribua valores aos itens inspecionados de acordo com a lista abaixo:</p>
 
@@ -45,22 +45,22 @@
 			
 
 			<form>
-					<label for="s1">Deve existir área apropriada ou local específico para o envase/embalagem de produtos. A distribuição dos equipamentos deve ser ordenada e racional.</label>
+					<label for="s1">As reclamações e demais informações referentes a produtos com possíveis desvios de qualidade devem ser cuidadosamente investigadas e registradas de acordo com procedimentos escritos. A gestão destas investigações deve ser realizada por pessoal autorizado com participação do Controle de Qualidade e demais áreas envolvidas</label>
 					<input type="text" id="s1" class="input-padrao" required>
 
-					<label for="s2">As instalações físicas para o envase/embalagem dos produtos devem ser projetadas de forma a evitar misturas entre diferentes produtos e lotes.</label>
+					<label for="s2">Caso seja necessário, a verificação deverá ser estendida a outros lotes vizinhos para verificar se podem ter sido afetados.</label>
 					<input type="text" id="s2" class="input-padrao" required>
 
-					<label for="s3">O produto a granel deve ser mantido fechado durante o processo de envase, sendo aberto somente quando necessário. Deve existir identificação do produto (nome e/ou codificação e lote) de forma visível nos equipamentos e em cada linha de envase.</label>
+					<label for="s3">Deve ser designada pessoa ou setor responsável para o recebimento das reclamações e pelas medidas a serem adotadas.</label>
 					<input type="text" id="s3" class="input-padrao" required>
 
-					<label for="s4">É recomendável a verificação da relação entre o rendimento teórico e o real e se houver discrepância com os parâmetros estabelecidos, justificar por escrito.</label>
+					<label for="s4">Deve existir procedimento escrito que descreva as ações a serem adotadas em caso de reclamação de possíveis desvio de qualidade de um produto, incluindo a necessidade de realizar um provável recolhimento do produto no mercado.</label>
 					<input type="text" id="s4" class="input-padrao" required>
 
-					<label for="s5">O material codificado remanescente do envase/embalagem deve ser destruído, com registros.</label>
+					<label for="s5">Quando necessário, devem ser adotadas providencias adequadas de acompanhamento após a investigação e a avaliação de reclamação.</label>
 					<input type="text" id="s5" class="input-padrao" required>
 
-					<label for="s6">Nos casos em que o envase e a rotulagem não sejam contínuos, devem ser adotadas medidas de identificação e segregação para evitar misturas ou erros de rotulagem.</label>
+					<label for="s6">Os registros de reclamações devem ser regularmente revisados com a finalidade de detectar qualquer indício de problemas específicos ou recorrentes e que exijam maior atenção.</label>
 					<input type="text" id="s6" class="input-padrao" required>
 			</form>
 
@@ -112,7 +112,7 @@
         var exi = "Em exigência"
         var ins = "Insatisfatório"
 
-        if (12>=pontuacao&&pontuacao>=8) {
+        if (12>=pontuacao&&pontuacao>=9) {
 		
 		document.getElementById("resultado").setAttribute("value", sat);
 		document.getElementById("resultado").style.backgroundColor = "#5FD068";
@@ -120,7 +120,7 @@
 
         }
        
-        if (7>=pontuacao&&pontuacao>=4) {
+        if (8>=pontuacao&&pontuacao>=5) {
 
         	document.getElementById("resultado").setAttribute("value", exi);
         	document.getElementById("resultado").style.backgroundColor = "#FAEA48";
@@ -128,7 +128,7 @@
 
         }
 
-         if (3>=pontuacao&&pontuacao>=0) {
+         if (4>=pontuacao&&pontuacao>=0) {
 
          	document.getElementById("resultado").setAttribute("value", ins);
          	document.getElementById("resultado").style.backgroundColor = "#EB4747";
@@ -140,4 +140,8 @@
 
 	
 </script>
+
+
+
+
 
